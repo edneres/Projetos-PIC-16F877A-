@@ -1,0 +1,20 @@
+[Header]
+MagicCookie={0b13fe8c-dfe0-40eb-8900-6712719559a7}
+Version=1.0
+[File000]
+Location=C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.o
+Folder=Intermediary
+[File001]
+Location=C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.HEX
+Folder=Output
+[File002]
+Location=C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.LST
+Folder=Output
+[File003]
+Location=C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.ERR
+Folder=Output
+[File004]
+Location=C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.COF
+Folder=Output
+[TOOL_LOC_STAMPS]
+tool_loc{0C155615-B197-4A4B-AEB6-343BB3F41A35}=C:\Program Files (x86)\PICC\Ccsc.exe

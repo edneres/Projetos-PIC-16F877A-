@@ -1,0 +1,16 @@
+[PROJECT]
+Target=TIMER1.hex
+Processor_Text=PIC16F877A
+CCSVersion=5.007
+Compiler=PCM
+[Target Data]
+FileList=TIMER1.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\devices\;C:\Program Files (x86)\PICC\drivers\;C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\TIMERs\
+[TIMER1.c]
+Type=4
+[mru-list]
+1=TIMER1.c
+[Units]
+Count=1
+1=TIMER1 (main)

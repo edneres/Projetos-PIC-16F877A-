@@ -1,0 +1,33 @@
+#include <16F628A.h> // O ".h" indica que esse arquivo é um cabeçalho que coném todas as configurações pra se trabalhar com esse microcontrolador
+
+#fuses XT, NOLVP, NOWDT // Bits de configurações
+						// Fusível do tipo XT: é a velocidade do oscilador externo (se é lenta, média ou alta, no caso, média
+				        // NOLVP: "No Low Voltage Programe" (grava modo de gravação em baixa tensão, no caso, desabilitado > NO < ; com isso passa-se a ter condições de ultilizar o pino RB )
+				        // NOWDT: "No Watch Dog TIme" >> NO - desabilita >> WDT - reinicia o código a cada erro/trvamento
+
+#use delay(clock = 4000000) // Outra diretiva com o que se quer usar de especial no código
+		                    // delay: sistema pra atraso, trava o código em determinado momento, uma parada forçada, com determinada frequência pra base de tempo como parâmetro
+							// clocl: base para o delay.
+							// 4000000: frequência [do clock] do cristal externo. Frequência média, tal qual o requerido anteriormente. >> Frequências médias -- 1MHz - 4MHz (para esse Micro)  
+
+
+void main()
+{
+	while(TRUE)
+		{
+			////////////////////////
+			// EFEITO PISCA-PISCA //
+			////////////////////////
+
+			output_high(pin_b0); // Liga uma saída em nível alto (poderia ser em nível baixo). >> pin_b0: parâmetro que indica qual a saída 
+			
+			// Depois de ligado, quer-se que a saída fique um tempo ligada...
+			delay_ms(500); // delay sempre em milissegundos (ms) ou em micro. >> 500: o tempo do delay (meio segundo)
+			
+			// Passado o tempo especificado, agora quer-se desligar a saída...
+			output_low(pin_b0); 
+			
+			// Depois de desligado, quer-se que a saída fique um tempo desligada... 
+			delay_ms(500);
+		}
+}

@@ -1,0 +1,304 @@
+001     TMR0
+002     PCL
+003     STATUS
+004-005 @READ_PROGRAM_MEMORY8.P1
+004     FSR
+004-005 @WRITE_PROGRAM_MEMORY8.P1
+005     PORTA
+005.0   porta0
+005.1   porta1
+005.2   porta2
+005.3   porta3
+005.4   porta4
+005.5   porta5
+006.0   rb0
+006     PORTB
+006.1   rb1
+006.2   rb2
+006.3   rb3
+006.4   rb4
+006.5   rb5
+006.6   rb6
+006.7   rb7
+007     PORTC
+007.0   portc0
+007.1   portc1
+007.2   portc2
+007.3   portc3
+007.4   portc4
+007.5   portc5
+007.6   portc6
+007.7   portc7
+008     PSP_DATA
+008     PORTD
+008.0   portd0
+008.1   portd1
+008.2   portd2
+008.3   portd3
+008.4   portd4
+008.5   portd5
+008.6   portd6
+008.7   portd7
+009     PORTE
+009.0   porte0
+009.1   porte1
+009.2   porte2
+00A     PCLATH
+00B     INTCON
+00B.0   rbif
+00B.1   intf
+00B.2   t0if
+00B.3   rbie
+00B.4   inte
+00B.5   t0ie
+00B.6   peie
+00B.7   gie
+00C     PIR1
+00C.0   tmr1if
+00C.1   tmr2if
+00C.2   ccp1if
+00C.3   sspif
+00C.4   txif
+00C.5   rcif
+00C.6   adif
+00C.7   pspif
+00D     PIR2
+00D.0   ccp2if
+00D.3   bclif
+00D.4   eeif
+00E     TMR1L
+00F     TMR1H
+010.0   tmr1on
+010     T1CON
+010.1   tmr1cs
+010.2   t1sync
+010.3   t1oscen
+010.4   t1ckps0
+010.5   t1ckps1
+011     TMR2
+012     T2CON
+012.0   t2ckps0
+012.1   t2ckps1
+012.2   tmr2on
+012.3   toutps0
+012.4   toutps1
+012.5   toutps2
+012.6   toutps3
+013     SSPBUF
+014     SSPCON
+014.0   sspm0
+014.1   sspm1
+014.2   sspm2
+014.3   sspm3
+014.4   ckp
+014.5   sspen
+014.6   sspov
+014.7   wcol
+015     CCPR1L
+015     CCP_1_LOW
+015     CCP_1
+016     CCPR1H
+016     CCP_1_HIGH
+017.0   ccp1m0
+017     CCP1CON
+017.1   ccp1m1
+017.2   ccp1m2
+017.3   ccp1m3
+017.4   ccp1y
+017.5   ccp1x
+018     RCSTA
+018.0   rx9d
+018.1   oerr
+018.2   ferr
+018.3   adden
+018.4   cren
+018.5   sren
+018.6   rx9
+018.7   spen
+019     TXREG
+01A     RCREG
+01B     CCP_2
+01B     CCP_2_LOW
+01B     CCPR2L
+01C     CCP_2_HIGH
+01C     CCPR2H
+01D.0   ccp2m0
+01D     CCP2CON
+01D.1   ccp2m1
+01D.2   ccp2m2
+01D.3   ccp2m3
+01D.4   ccp2y
+01D.5   ccp2x
+01E     ADRESH
+01F     ADCON0
+01F.0   adon
+01F.2   adgo
+01F.3   chs0
+01F.4   chs1
+01F.5   chs2
+01F.6   adcs0
+01F.7   adcs1
+021     main.cont
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+081     OPTION_REG
+081.0   ps0
+081.1   ps1
+081.2   ps2
+081.3   psa
+081.4   t0se
+081.5   t0cs
+081.6   intedg
+081.7   not_rbpu
+085     TRISA
+085.0   trisa0
+085.1   trisa1
+085.2   trisa2
+085.3   trisa3
+085.4   trisa4
+085.5   trisa5
+086.0   trisb0
+086     TRISB
+086.1   trisb1
+086.2   trisb2
+086.3   trisb3
+086.4   trisb4
+086.5   trisb5
+086.6   trisb6
+086.7   trisb7
+087     TRISC
+087.0   trisc0
+087.1   trisc1
+087.2   trisc2
+087.3   trisc3
+087.4   trisc4
+087.5   trisc5
+087.6   trisc6
+087.7   trisc7
+088     TRISD
+088.0   trisd0
+088.1   trisd1
+088.2   trisd2
+088.3   trisd3
+088.4   trisd4
+088.5   trisd5
+088.6   trisd6
+088.7   trisd7
+089.0   trise0
+089     TRISE
+089.1   trise1
+089.2   trise2
+089.4   pspmode
+089.5   ibov
+089.6   obf
+089.7   ibf
+08C.0   tmr1ie
+08C     PIE1
+08C.1   tmr2ie
+08C.2   ccp1ie
+08C.3   sspie
+08C.4   txie
+08C.5   rcie
+08C.6   adie
+08C.7   pspie
+08D.0   ccp2ie
+08D     PIE2
+08D.3   bclie
+08D.4   eeie
+08E.0   bor
+08E     PCON
+08E.1   por
+091.0   sen
+091     SSPCON2
+091.1   rsen
+091.2   pen
+091.3   rcen
+091.4   acken
+091.5   ackdt
+091.6   ackstat
+091.7   gcen
+092     PR2
+093     SSPADD
+094.0   stat_bf
+094     SSPSTAT
+094.1   stat_ua
+094.2   stat_rw
+094.3   stat_s
+094.4   stat_p
+094.5   stat_da
+094.6   stat_cke
+094.7   stat_smp
+098     TXSTA
+098.0   tx9d
+098.1   trmt
+098.2   brgh
+098.4   sync
+098.5   txen
+098.6   tx9
+098.7   csrc
+099     SPBRG
+09C.6   C1OUT
+09C.7   C2OUT
+09E     ADRESL
+09F     ADCON1
+09F.0   pcfg0
+09F.1   pcfg1
+09F.2   pcfg2
+09F.3   pcfg3
+09F.7   adfm
+10C     EEDATA
+10D     EEADR
+10D-10E @READ_PROGRAM_MEMORY8.P1
+10D-10E @WRITE_PROGRAM_MEMORY8.P2
+10E     EEDATH
+10F     EEADRH
+18C     EECON1
+18C.0   rd
+18C.1   wr
+18C.2   wren
+18C.3   wrerr
+18C.7   eepgd
+18D     EECON2
+
+ROM Allocation:
+000004  @cinit1
+000004  main
+00000B  @cinit2
+
+Project Directory:
+    C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\
+
+Project Files:
+    Contador Borda Descida.c                                [11-abr-22 23:39  CRC=48D9FB6F]
+    ..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\devices\16F877A.h [21-jun-13 16:04  CRC=4E65664C]
+    reg_16f.h                                               [11-abr-22 14:07  CRC=0290D026]
+
+Source signature=9C610207
+
+Units:
+    Contador Borda Descida (main)
+
+Compiler Settings:
+    Processor:      PIC16F877A
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    ICD Provisions: Yes
+    Predefined symbols:
+       #define __DEBUG 1
+       #define __16F877A TRUE
+
+Output Files:
+    Errors:      Contador Borda Descida.err
+    INHX8:       Contador Borda Descida.hex
+    Symbols:     Contador Borda Descida.sym
+    List:        Contador Borda Descida.lst
+    Debug/COFF:  Contador Borda Descida.cof
+    Project:     Contador Borda Descida.ccspjt
+    Call Tree:   Contador Borda Descida.tre
+    Statistics:  Contador Borda Descida.STA

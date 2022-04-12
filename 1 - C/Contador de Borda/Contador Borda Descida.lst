@@ -1,0 +1,129 @@
+CCS PCM C Compiler, Version 5.007, 61971               11-abr-22 23:39
+
+               Filename:   C:\Users\edyne\OneDrive\Área de Trabalho\UFPI\Programação\2 - UFPI\3 - Projetos em C (PIC)\Contador de Borda\Contador Borda Descida.lst
+
+               ROM used:   40 words (1%)
+                           Largest free fragment is 2048
+               RAM used:   6 (2%) at main() level
+                           6 (2%) worst case
+               Stack used: 0 locations
+               Stack size: 7
+
+*
+0000:  NOP
+0001:  MOVLW  00
+0002:  MOVWF  0A
+0003:  GOTO   004
+.................... /* 
+.................... Fazer um código em C para fazer com que o timer0 opere como contador por borda de descida.  
+.................... A cada 10 contagens o estado do pino RA0 da porta A é invertido de estado. 
+.................... */ 
+....................  
+.................... #include <16F877A.h> 
+.................... //////// Standard Header file for the PIC16F877A device //////////////// 
+.................... #device PIC16F877A 
+....................  
+.................... #list 
+....................  
+.................... #include "reg_16f.h" 
+.................... // DEFS_877  
+.................... //  
+.................... // Standard definitions for PIC16F877  
+.................... //  
+.................... // Copyright, Peter H. Anderson, Baltimore, MD, June, '99  
+....................   
+.................... //#define byte int  
+....................  
+.................... //#byte PORTD = 0x08 
+.................... //#bit INTF = 0xb.1 
+....................  
+.................... #list  
+....................  
+....................  
+....................  
+.................... void main() 
+0004:  BSF    03.5
+0005:  BSF    1F.0
+0006:  BSF    1F.1
+0007:  BSF    1F.2
+0008:  BCF    1F.3
+0009:  MOVLW  07
+000A:  MOVWF  1C
+000B:  BCF    03.7
+000C:  MOVLW  1F
+000D:  ANDWF  03,F
+000E:  BCF    03.5
+000F:  CLRF   21
+.................... { 
+.................... 	unsigned int8 cont = 0; 
+.................... 	 
+.................... 	TRISA = 0x00; // TRISA como saida 
+0010:  BSF    03.5
+0011:  CLRF   05
+....................  
+.................... /* 
+.................... 	RBPU (+ significativo) 
+.................... 		0 
+.................... 	 
+.................... 	INTERDEG 
+.................... 		0 
+.................... 	 
+.................... 	T0CS - Define a fonte de clock do TIMER0: 
+.................... 		1 - Externa (PINO RA4/T0CKIN) - Modo contador; 
+.................... 	 
+.................... 	T0SE - Seleção da borda de transição do pino RA4/T0CKIN 
+.................... 		1 - transição nivel alto-baixo (transição negativa); 
+.................... 		 
+.................... 	PSA - Habilitação do prescaler (no modo CONTADOR é comum desabilitar); 
+.................... 		1 - Desabilitado; 
+.................... 	 
+.................... 	PS2, PS1, PS0 - Seleção do prescaler (somente no modo temporizador); 
+.................... 		0 (PS2) 
+.................... 		0 (PS1) 
+.................... 		0 (PS0) (- significativo) 
+.................... 			> 00111000 
+.................... */ 
+.................... 	OPTION_REG = 0b00111000; // Modo contador (seta o bit 5: T0CS) > clk externo (pino RA4/T0CKIN) 
+0012:  MOVLW  38
+0013:  MOVWF  01
+.................... 	 
+.................... 	TMR0 = 0; // Inicializa o registro TMR0 com o valor 0. 
+0014:  BCF    03.5
+0015:  CLRF   01
+.................... 	output_bit (pin_A0, 0); // Inicializa o valor do pino em 0 
+0016:  BCF    05.0
+0017:  BSF    03.5
+0018:  BCF    05.0
+....................   
+.................... 	while (TRUE) 
+.................... 	{ 
+.................... 		cont++; 
+0019:  BCF    03.5
+001A:  INCF   21,F
+....................  
+.................... 		if (cont == 10) 
+001B:  MOVF   21,W
+001C:  SUBLW  0A
+001D:  BTFSS  03.2
+001E:  GOTO   026
+.................... 		{ 
+.................... 			output_toggle (pin_A0); // Inverte o estado do pino RA0 a cada 10 pulsos/contagem 
+001F:  BSF    03.5
+0020:  BCF    05.0
+0021:  MOVLW  01
+0022:  BCF    03.5
+0023:  XORWF  05,F
+.................... 	  		cont = 0; 
+0024:  CLRF   21
+.................... 			TMR0 = 0; 
+0025:  CLRF   01
+.................... 		} 
+0026:  GOTO   01A
+.................... 	} 
+.................... } 
+0027:  GOTO   027
+
+Configuration Fuses:
+   Word  1: 373B   RC NOWDT NOPUT NOBROWNOUT NOLVP NOCPD NOWRT DEBUG NOPROTECT
+
+   Some fuses have been forced to be compatible with the ICD debugger.
